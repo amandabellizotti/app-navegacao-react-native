@@ -1,22 +1,18 @@
 import { useRouter } from "expo-router";
-import { View, Text, StyleSheet, TouchableOpacity} from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity} from "react-native";
 
-export default function Home() {
+export default function Sobre () {
     const router = useRouter();
-    return (
+        return (
         <View style={styles.container}>
-            <Text style={styles.title}>Bem vindo ao React Native!</Text>
-            <Text style={styles.subtitle}>Esta é a tela inicial do nosso aplicativo!</Text>
-            <TouchableOpacity style={styles.button}
-                onPress={() => router.push('/detalhes')}>
-                <Text style={styles.buttonText}>Ir para detalhes</Text>
-                </TouchableOpacity>
-                
-            <TouchableOpacity style={styles.button} onPress={() => router.push('/sobre')}>
-                <Text style={styles.buttonText}>Ir para sobre</Text>
+            <Text style={styles.title}>Sobre</Text>
+            <Text style={styles.subtitle}>Esta é a tela sobre do nosso aplicativo!</Text>
+            <Image style={styles.image} source={{uri: "https://i.pinimg.com/736x/32/02/10/3202105b8800027e0d7ce21771704439.jpg"}}></Image>
+            <TouchableOpacity style={styles.button} onPress={() => router.back()}>
+                <Text style={styles.buttonText}>Voltar Home</Text>
             </TouchableOpacity>
         </View>
-    );
+    )
 }
 
 const styles= StyleSheet.create ({
@@ -55,4 +51,15 @@ const styles= StyleSheet.create ({
         fontSize: 16,
         fontWeight: 600,
     },
+     image: {
+        width: 100,
+        height: 100,
+        marginBottom: 20,
+    },
+
+    description: {
+        fontSize: 16,
+        color: "#332736",
+        textAlign: "center",
+    }
 })
