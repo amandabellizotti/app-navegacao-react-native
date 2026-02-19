@@ -1,11 +1,14 @@
 import { useRouter } from "expo-router";
-import { View, StyleSheet, Text, Image, TouchableOpacity} from "react-native";
+import { View, StyleSheet, Text, Image, TouchableOpacity, ScrollView} from "react-native";
 
 export default function Detalhes () {
     const router = useRouter();
 
     return (
+
+    <ScrollView>
         <View style={styles.container}>
+            <Image style={styles.imagem} source={{uri: "https://i.pinimg.com/736x/a0/c9/bb/a0c9bb80330b4bc1a717d01d7c212dfb.jpg"}} />
             <Text style={styles.title}>
                 Tela de detalhes </Text>
         
@@ -14,11 +17,15 @@ export default function Detalhes () {
 
         <Text style={styles.description}> alguma coisa escrita ai</Text>
 
+            <View style={styles.card}>
+                <Text style={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies lacinia, nunc nisl aliquam nisl, eget aliquam nunc nisl eget nunc. Donec auctor, nisl eget ultricies lacinia, nunc nisl aliquam nisl, eget aliquam nunc nisl eget nunc.</Text>
+                    </View>
+
         <TouchableOpacity style={styles.button} onPress={ () => router.back() }>
             <Text style={styles.buttonText}>Voltar</Text>
         </TouchableOpacity>
         </View>
-
+</ScrollView>
     )
 }
 
@@ -65,9 +72,27 @@ const styles= StyleSheet.create ({
         marginBottom: 20,
     },
 
+    imagem :{
+        width: 250,
+        height: 250,
+        marginBottom: 20,
+    },
+
     description: {
         fontSize: 16,
         color: "#332736",
         textAlign: "center",
+    },
+
+    card: {
+        backgroundColor: "#f5d3faff",
+        padding: 16,
+        margin: 5,
+        borderRadius: 12,
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
     }
 })

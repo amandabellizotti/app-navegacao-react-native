@@ -8,6 +8,10 @@ export default function Sobre () {
             <Text style={styles.title}>Sobre</Text>
             <Text style={styles.subtitle}>Esta é a tela sobre do nosso aplicativo!</Text>
             <Image style={styles.image} source={{uri: "https://i.pinimg.com/736x/32/02/10/3202105b8800027e0d7ce21771704439.jpg"}}></Image>
+            <View style={styles.card}>
+                <Text style={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget ultricies lacinia, nunc nisl aliquam nisl, eget aliquam nunc nisl eget nunc. Donec auctor, nisl eget ultricies lacinia, nunc nisl aliquam nisl, eget aliquam nunc nisl eget nunc.</Text>
+            </View>
+
             <TouchableOpacity style={styles.button} onPress={() => router.back()}>
                 <Text style={styles.buttonText}>Voltar Home</Text>
             </TouchableOpacity>
@@ -61,5 +65,17 @@ const styles= StyleSheet.create ({
         fontSize: 16,
         color: "#332736",
         textAlign: "center",
+    },
+
+    card: {
+        backgroundColor: "#f5d3faff",
+        padding: 16,
+        margin: 5,
+        borderRadius: 12,
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
     }
 })
